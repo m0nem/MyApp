@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Android SQLite" uuid="f0591ab1-ef39-4058-a8eb-076ae7694ac7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <remarks>test</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\ar.sharifi\AppData\Local\JetBrains\IntelliJIdea2020.1\android\databases\SERIAL_NUMBER_CB5A29GGVX\com.example.testmvp\internal\room_new_db</jdbc-url>
+    </data-source>
+  </component>
+</project>

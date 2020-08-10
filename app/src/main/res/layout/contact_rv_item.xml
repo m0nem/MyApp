@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <data>
+
+        <variable name="contactEntity" type="com.example.testmvp.data.db.entity.Contact"/>
+        <variable name="presenter" type="com.example.testmvp.ui.contact_list.ContactPresenter"/>
+
+    </data>
+
+    <LinearLayout
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#efefef"
+    >
+        <LinearLayout
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            <ImageView android:layout_width="match_parent"
+                       android:layout_height="80dip"
+                       android:src="@mipmap/ic_launcher"
+                       app:glide="@{String.valueOf(`https://s3.amazonaws.com/cbi-research-portal-uploads/2017/09/12140818/Baby-Tech-Global-Map-9.12.17.png`)}"/>
+
+            <Button
+                    android:id="@+id/btn_del"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="7dip"
+                    android:backgroundTint="#ff0000"
+                    android:text="Del"
+                    android:textColor="#ffffff"
+                    android:onClick="@{(view) -> presenter.deleteItem(contactEntity)}"/>
+
+
+        </LinearLayout>
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.conID)}"
+                android:id="@+id/con_id"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.conName)}"
+                android:id="@+id/con_name"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.mail)}"
+                android:id="@+id/con_mail"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.phone)}"
+                android:id="@+id/con_phone"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.code)}"
+                android:id="@+id/con_code"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+
+        <TextView
+                android:text="@{String.valueOf(contactEntity.date)}"
+                android:id="@+id/con_date"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+        />
+
+        <View android:layout_width="match_parent"
+              android:layout_height="0.5dp"
+              android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+</layout>

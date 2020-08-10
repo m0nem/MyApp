@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="newsEntity" type="com.example.testmvp.data.db.entity.News"/>
+    </data>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.databinding.DataBindingActivity">
+
+       <TextView
+                android:text="@{String.valueOf(newsEntity.newsID)}"
+                android:layout_margin="10dp"
+                android:id="@+id/tv_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@{newsEntity.title}"
+                android:layout_margin="10dp"
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@={newsEntity.body}"
+                android:layout_margin="10dp"
+                android:id="@+id/tv_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@{newsEntity.date}"
+                android:layout_margin="10dp"
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <Button
+                android:text="set name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/btn_set_body"/>
+
+        <!-- edit viewModel data -->
+
+        <EditText
+                android:onTextChanged="@{(text, start, before, count) -> newsEntity.setBody(text)}"
+                android:text="@={newsEntity.body}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:test="@{newsEntity.body}"
+                android:id="@+id/et_body"/>
+
+    </LinearLayout>
+
+
+</layout>
